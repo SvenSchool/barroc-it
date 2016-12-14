@@ -1,0 +1,126 @@
+*{
+	margin: 0px; 
+	padding: 0px;
+}
+
+.clear {
+	width:100%;
+	clear:both;
+}
+
+.sep {
+	width:100%;
+	border-bottom:1px solid #cecece;
+}
+
+/*HEADER--------------------------------------------------------------------------------------------------*/
+
+.header_container {
+	width:900px;
+}
+
+.banner > h1 {
+	position:relative;
+	text-shadow: 2px 2px 3px black;
+	color: gray;
+	line-height: 0.8em;
+}
+
+.banner {
+	margin-top: 10%;
+	margin-bottom: 10%;
+}
+
+#banner {
+	width:100%;
+	position: absolute;
+	z-index: -1;
+}
+
+.maincontent {
+	background-color:#ffffff;
+	width:100%;
+	height:100%;
+	min-height:200px;
+}
+.float_btn{
+	float: right;
+	margin-bottom:10px;
+	margin-right: 10px;
+}
+
+.button_add {
+	float:left;
+	margin-bottom:10px;
+}
+.float_left{
+	float:left;
+	margin: 5px;
+}
+
+/* Add form customer */
+
+.radio {
+	display: inline-block;
+}
+
+.limitCheck{
+	background-color:red;
+}
+
+.panel-text 
+{
+ font-size: 36px;
+ border-bottom:1px solid #cecece;
+ position: relative;
+ margin-bottom:10px;
+}
+/* Add form customer-------------------------------------------------------------------------------------------------- */
+
+.radio {
+	display: inline-block;
+}
+
+/* SALES--------------------------------------------------------------------------------------------------  */
+
+
+.search-marginleft {
+	margin-left: 25px;
+}
+
+.project-susp span {
+	border-bottom:1px dotted black;
+	cursor:help;
+	color:red;
+}
+
+/* Comments--------------------------------------------------------------------------------------------------  */
+.comment {
+	width:550px;
+	margin:5px;
+	box-shadow:0 0 5px #cecece;
+	border-radius:5px;
+	padding:10px;
+	position:relative;
+	float:left;
+}
+
+.comment-date {
+	float:right;
+	width:100px;
+}
+
+.comment h3 {
+	width:420px !important;
+	position:absolute;
+	top:10px;
+	left:10px;
+	margin:0 !important;
+	overflow:hidden;
+}
+
+.cmntsep {
+	border-bottom:1px solid #cecece;
+	margin-top:30px;
+	margin-bottom:10px;
+}

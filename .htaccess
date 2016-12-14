@@ -1,0 +1,36 @@
+RewriteEngine On
+
+# Rewriting the URLs with things in their GET method
+
+	# Finance department
+	RewriteRule ^finance/([a-z0-9\-]+)/$ finance.php?cid=$1 [NC,L]
+	RewriteRule ^finance/([a-z0-9\-]+)/([a-z0-9\-]+)/$ finance.php?cid=$1&status=$2 [NC,L]
+	RewriteRule ^finance/([a-z0-9\-]+)/([a-z0-9\-]+)/([a-z0-9\-]+)/$ finance.php?cid=$1&status=$2&invoice=$3 [NC,L]
+
+	# Sales department
+	RewriteRule ^sales/([a-z0-9\-]+)/$ sales.php?cid=$1 [NC,L]
+	RewriteRule ^sales/([a-z0-9\-]+)/([a-z0-9\-]+)/$ sales.php?cid=$1&action=$2 [NC,L]
+	RewriteRule ^sales/([a-z0-9\-]+)/([a-z0-9\-]+)/([a-z0-9\-]+)/$ sales.php?cid=$1&action=$2&apt=$3 [NC,L]
+
+	# Development department
+	RewriteRule ^development/([a-z0-9\-]+)/$ development.php?cid=$1 [NC,L]
+	RewriteRule ^development/([a-z0-9\-]+)/([a-z0-9\-]+)/$ development.php?cid=$1&action=$2 [NC,L]
+	RewriteRule ^development/([a-z0-9\-]+)/([a-z0-9\-]+)/([a-z0-9\-]+)/$ development.php?cid=$1&action=$2&proj=$3 [NC,L]
+
+	# P&O department
+	RewriteRule ^personnel/([a-z0-9\-]+)/$ personnel.php?uid=$1 [NC,L]
+	RewriteRule ^personnel/([a-z0-9\-]+)/([a-z0-9\-]+)/$ personnel.php?uid=$1&action=$2 [NC,L]
+	RewriteRule ^personnel/([a-z0-9\-]+)/([a-z0-9\-]+)/([a-z0-9\-]+)/$ personnel.php?uid=$1&action=$2&port=$3 [NC,L]
+
+	# General page
+	RewriteRule ^general/([a-z0-9\-]+)/$ general.php?action=$1 [NC,L]
+
+# Rewriting all URLs to remove all .php's and add trailing slashes
+	
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^([^/]+)/$ $1.php
+	RewriteRule ^([^/]+)/([^/]+)/$ /$1/$2.php
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5}|/)$
+	RewriteRule (.*)$ /$1/ [R=301,L]
